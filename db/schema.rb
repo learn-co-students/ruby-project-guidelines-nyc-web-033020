@@ -22,8 +22,8 @@ ActiveRecord::Schema.define(version: 20200408150417) do
     t.string "model"
   end
 
-  create_table "username", force: :cascade do |t|
-    t.string  "username"
+  create_table "name", force: :cascade do |t|
+    t.string  "name"
     t.integer "zip_code"
   end
 
