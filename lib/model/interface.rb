@@ -3,6 +3,7 @@ class Interface
     def start_up
         welcome
         login_or_join
+        view_inventory
     end
     
     def welcome
@@ -14,8 +15,14 @@ class Interface
         answer = gets.chomp
         puts "What is your zip code?"
         zcode = gets.chomp
+        @user = User.find_or_create_by(name:answer, zip_code:zcode)
+        puts "Welcome to Gotham Sir #{@user.name}"
+    end
 
-        join = User.find_or_create_by(name:answer, zip_code:zcode)
+    def view_inventory
+        puts "Would you like to view our inventory, sir?"
+            one = CarModel.first.manufacturer
+            puts one
     end
 
 
