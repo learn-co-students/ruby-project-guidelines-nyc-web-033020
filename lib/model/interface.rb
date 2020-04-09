@@ -3,6 +3,7 @@ class Interface
     def start_up
         welcome
         login_or_join
+        #main_screen
         view_inventory
     end
     
@@ -21,8 +22,14 @@ class Interface
 
     def view_inventory
         puts "Would you like to view our inventory, sir?"
-            one = CarModel.first.manufacturer
-            puts one
+        one = CarModel.first.manufacturer + " " + CarModel.first.model
+        puts one
+        two = CarModel.second.manufacturer + " " + CarModel.second.model
+        puts two
+        three = CarModel.third.manufacturer + " " + CarModel.third.model
+        puts three
+        four = CarModel.fourth.manufacturer + " " + CarModel.fourth.model
+        puts four
     end
 
 
