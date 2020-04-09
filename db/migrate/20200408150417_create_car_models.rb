@@ -1,6 +1,6 @@
-class CreateCarModels < ActiveRecord::Migration[5.0]
+class CreateCarModels < ActiveRecord::Migration[5.2]
   def change
-    create_table :manufacturers do |t|
+    create_table :car_models do |t|
       t.string :manufacturer
       t.string :model
     end

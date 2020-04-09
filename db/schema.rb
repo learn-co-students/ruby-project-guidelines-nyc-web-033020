@@ -10,20 +10,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20200408150417) do
+ActiveRecord::Schema.define(version: 2020_04_08_150417) do
 
   create_table "car_interests", force: :cascade do |t|
     t.integer "name_id"
     t.integer "model_id"
   end
 
-  create_table "manufacturers", force: :cascade do |t|
+  create_table "car_models", force: :cascade do |t|
     t.string "manufacturer"
     t.string "model"
   end
 
-  create_table "name", force: :cascade do |t|
-    t.string  "name"
+  create_table "users", force: :cascade do |t|
+    t.string "name"
     t.integer "zip_code"
   end
 
