@@ -1,5 +1,6 @@
 require_relative '../config/environment'
 
+app = Interface.new
+app
 
-
-puts "HELLO WORLD"
+app.start_up
