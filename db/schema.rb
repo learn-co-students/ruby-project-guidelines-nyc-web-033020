@@ -18,8 +18,13 @@ ActiveRecord::Schema.define(version: 2020_04_08_150417) do
   end
 
   create_table "car_models", force: :cascade do |t|
+    t.integer "year"
     t.string "manufacturer"
     t.string "model"
+    t.string "color"
+    t.integer "zip"
+    t.integer "mileage"
+    t.integer "price"
   end
 
   create_table "users", force: :cascade do |t|
