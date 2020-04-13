@@ -1,10 +1,12 @@
+require 'pry'
 class Interface
 
     def start_up
         welcome
         login_or_join
         #main_screen
-        view_inventory
+        #view_inventory
+        change_zip
     end
     
     def welcome
@@ -104,6 +106,14 @@ end
 
  def select_favorite
     
+ end
+
+ def change_zip
+    puts "Please enter new zip code."
+    user = User.find_by @user.name
+    binding.pry
+    #@zip = user.update(:zip_code)
+
  end
 
 end
