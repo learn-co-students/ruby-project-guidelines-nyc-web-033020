@@ -110,10 +110,9 @@ end
 
  def change_zip
     puts "Please enter new zip code."
-    user = User.find_by @user.name
-    binding.pry
-    #@zip = user.update(:zip_code)
-
+    user = User.find_by(name:@user.name)
+    userzip = User.find_by(zip_code:@user.zip_code)
+    user.update(zip_code:userzip)
  end
 
 end
