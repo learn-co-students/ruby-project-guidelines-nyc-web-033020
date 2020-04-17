@@ -32,10 +32,11 @@ class Interface
         prompt.select("What would you like to do today?") do |menu|
             menu.choice "Your Profile", -> { your_profile }
             menu.choice "View Inventory", -> { select_manufacturer }
+            #menu.choice "See My Favorites" -> {}
             menu.choice "Change Zipcode", -> { change_zip }
             menu.choice "Deactivate Account", -> { delete_account }
             menu.choice "Log Out", -> { exit_app }
-        end   #insert tty prompt for option to navigate through. Options 1-4
+        end
     end
 
     def your_profile
@@ -65,17 +66,31 @@ class Interface
     def aston_martin
         system "clear"
         vanquish = CarModel.find_by model:"Vanquish"
-        print vanquish.year, vanquish.manufacturer, vanquish.model, vanquish.color, vanquish.zip, vanquish.mileage, vanquish.price
+        puts "#{vanquish.year} #{vanquish.manufacturer} #{vanquish.model}"
+        puts "Color: #{vanquish.color}" 
+        puts "Zip Code: #{vanquish.zip}"
+        puts "Mileage: #{vanquish.mileage}"
+        puts "Asking Price: #{vanquish.price}"
         sleep(5)
+        puts "Would you like to add this?"
+        answer = gets.chomp
         select_manufacturer
     end
 
     def bmw
         system "clear"
         m8 = CarModel.find_by model:"M8"
-        print m8.year, m8.manufacturer, m8.model, m8.color, m8.zip, m8.mileage, m8.price
+        puts "#{m8.year} #{m8.manufacturer} #{m8.model}"
+        puts "Color: #{m8.color}" 
+        puts "Zip Code: #{m8.zip}" 
+        puts "Mileage #{m8.mileage}" 
+        puts "Asking Price: #{m8.price}"
         m4 = CarModel.find_by model:"M4"
-        print m4.year, m4.manufacturer, m4.model, m4.color, m8.zip, m8.mileage, m8.price
+        puts "#{m4.year} #{m4.manufacturer} #{m4.model}"
+        puts "Color: #{m4.color}" 
+        puts "Zip Code: #{m8.zip}" 
+        puts "Mileage #{m8.mileage}"
+        puts "Asking Price: #{m8.price}"
         sleep(5)
         select_manufacturer
     end
@@ -83,9 +98,17 @@ class Interface
     def honda
         system "clear"
         accord = CarModel.find_by model:"Accord"
-        print accord.year, accord.manufacturer, accord.model, accord.color, accord.zip, accord.mileage, accord.price
+        puts "#{accord.year} #{accord.manufacturer} #{accord.model}"
+        puts "Color: #{accord.color}"
+        puts "Zip Code: #{accord.zip}" 
+        puts "Mileage: #{accord.mileage}" 
+        puts "Asking Price #{accord.price}"
         civic = CarModel.find_by model:"Civic"
-        print civic.year, civic.manufacturer, civic.model, civic.color, civic.zip, civic.mileage, civic.price
+        puts "#{civic.year} #{civic.manufacturer} #{civic.model}"
+        puts "Color: #{civic.color}"
+        puts "Zip Code: #{civic.zip}"
+        puts "Mileage: #{civic.mileage}"
+        puts "Asking Price: #{civic.price}"
         sleep(5)
         select_manufacturer
     end
@@ -93,7 +116,11 @@ class Interface
     def mazda
         system "clear"
         rx7 = CarModel.find_by model:"RX-7"
-        print rx7.year, rx7.manufacturer, rx7.model, rx7.color, rx7.zip, rx7.mileage, rx7.price
+        puts "#{rx7.year} #{rx7.manufacturer} #{rx7.model}"
+        puts "Color: #{rx7.color}"
+        puts "Zip Code: #{rx7.zip}"
+        puts "Mileage: #{rx7.mileage}"
+        puts "Asking Price: #{rx7.price}"
         sleep(5)
         select_manufacturer
     end
@@ -101,11 +128,23 @@ class Interface
     def mercedes
         system "clear"
         s550 = CarModel.find_by model:"S550"
-        print s550.year, s550.manufacturer, s550.model, s550.color, s550.zip, s550.mileage, s550.price
+        puts "#{s550.year} #{s550.manufacturer} #{s550.model}"
+        puts "Color: #{s550.color}"
+        puts "Zip Code: #{s550.zip}"
+        puts "Mileage: #{550.mileage}"
+        puts "Price:#{s550.price}"
         c63 = CarModel.find_by model:"C63"
-        print c63.year, c63.manufacturer, c63.model, c63.color, c63.zip, c63.mileage, c63.price
+        puts "#{c63.year} #{c63.manufacturer} #{c63.model}"
+        puts "Color: #{c63.color}"
+        puts "Zip Code: #{c63.zip}"
+        puts "Mileage: #{c63.mileage}"
+            c63.price
         ecoupe = CarModel.find_by model:"E350"
-        print ecoupe.year, ecoupe.manufacturer, ecoupe.model, ecoupe.color, ecoupe.zip, ecoupe.mileage, c63.price
+        puts "#{ecoupe.year} #{ecoupe.manufacturer} #{ecoupe.model}"
+        puts "Color: #{ecoupe.color}"
+        puts "Zip Code: #{ecoupe.zip}"
+        puts "Mileage: #{ecoupe.mileage}"
+        puts "Asking price: #{c63.price}"
         sleep(5)
         select_manufacturer
     end
@@ -113,7 +152,11 @@ class Interface
     def mini
         system "clear"
         cooper = CarModel.find_by model:"Cooper S"
-        print cooper.year, cooper.manufacturer, cooper.model, cooper.color, cooper.zip, cooper.mileage, cooper.price
+        puts "#{cooper.year} #{cooper.manufacturer} #{cooper.model}"
+        puts "Color: #{cooper.color}"
+        puts "Zip Code: #{cooper.zip}"
+        puts "Mileage: #{cooper.mileage}"
+        puts "Asking Price: #{cooper.price}"
         sleep(5)
         select_manufacturer
     end
@@ -121,9 +164,17 @@ class Interface
     def mitsubishi
         system "clear"
         eclipse = CarModel.find_by model:"Eclipse"
-        print eclipse.year, eclipse.manufacturer, eclipse.model, eclipse.color, eclipse.zip, eclipse.mileage, eclipse.price
+        puts "#{eclipse.year} #{eclipse.manufacturer} #{eclipse.model}"
+        puts "Color: #{eclipse.color}"
+        puts "Zip Code: #{eclipse.zip}"
+        puts "Mileage: #{eclipse.mileage}"
+        puts "Asking Price: #{eclipse.price}"
         evo = CarModel.find_by model:"Lancer Evo"
-        print evo.year, evo.manufacturer, evo.model, evo.color, evo.zip, evo.mileage, evo.price
+        puts "#{evo.year} #{evo.manufacturer} #{evo.model}"
+        puts "Color: #{evo.color}"
+        puts "Zip Code: #{evo.zip}"
+        puts "Mileage: #{evo.mileage}"
+        puts "Asking Price: #{evo.price}"
         sleep(5)
         select_manufacturer
     end
@@ -131,11 +182,23 @@ class Interface
     def nissan
         system "clear"
         nismo = CarModel.find_by model:"350z Nismo"
-        print nismo.year, nismo.manufacturer, nismo.model, nismo.color, nismo.zip, nismo.mileage, nismo.price
+        puts "#{nismo.year} #{nismo.manufacturer} #{nismo.model}"
+        puts "Color: #{nismo.color}"
+        puts "Zip Code: #{nismo.zip}"
+        puts "Mileage: #{nismo.mileage}"
+        puts "Asking Price: #{nismo.price}"
         s15 = CarModel.find_by model:"240sx Silvia"
-        print s15.year, s15.manufacturer, s15.model, s15.color, s15.zip, s15.mileage, s15.price
+        puts "#{s15.year} #{s15.manufacturer} #{s15.model}"
+        puts "Color: #{s15.color}"
+        puts "Zip Code: #{s15.zip}"
+        puts "Mileage: #{s15.mileage}"
+        puts "Asking Price: #{s15.price}"
         skyline = CarModel.find_by model:"GTR"
-        print skyline.year, skyline.manufacturer, skyline.model, skyline.color, skyline.zip, skyline.mileage, skyline.price
+        puts "#{skyline.year} #{skyline.manufacturer} #{skyline.model}"
+        puts "Color: #{skyline.color}"
+        puts "Zip Code: #{skyline.zip}"
+        puts "Mileage: #{skyline.mileage}"
+        puts "Asking Price: #{skyline.price}"
         sleep(5)
         select_manufacturer
     end
@@ -143,14 +206,32 @@ class Interface
     def toyota 
     system "clear"
     supra = CarModel.find_by model:"Supra"
-    print supra.year, supra.manufacturer, supra.model, supra.color, supra.zip, supra.mileage, supra.price
+    puts "#{supra.year} #{supra.manufacturer} #{supra.model}"
+    puts "Color: #{supra.color}"
+    puts "Zip Code: #{supra.zip}"
+    puts "Mileage: #{supra.mileage}"
+    puts "Asking Price: #{supra.price}"
     celica = CarModel.find_by model:"Celica"
-    print celica.year, celica.manufacturer, celica.model, celica.color, celica.zip, celica.mileage, celica.price
+    puts "#{celica.year} #{celica.manufacturer} #{celica.model}"
+    puts "Color: #{celica.color}"
+    puts "Zip Code: #{celica.zip}"
+    puts "Mileage: #{celica.mileage}"
+    puts "Asking Price: #{celica.price}"
     mr2 = CarModel.find_by model:"MR2"
-    print mr2.year, mr2.manufacturer, mr2.model, mr2.color, mr2.zip, mr2.mileage, mr2.price
+    puts "#{mr2.year} #{mr2.manufacturer} #{mr2.model}"
+    puts "Color: #{mr2.color}"
+    puts "Zip Code: #{mr2.zip}"
+    puts "Mileage: #{mr2.mileage}"
+    puts "Asking Price: #{mr2.price}"
     sleep(5)
     select_manufacturer
 end
+
+#def user_favorites
+#    puts "Here are the vehicles you have favorited"
+#    myfav = CarInterest.find_or_create_by(name_id:@user.id, model_id: )
+#   CarInterest.all.select do 
+#end
 
  def change_zip
     puts "Please enter new zip code."
